@@ -26,7 +26,6 @@ export class BasicPage implements OnInit {
 
   ngOnInit() {
     this.ports = this.portService.getPorts();
-    console.log(this.ports);
   }
 
   portChange(event: {

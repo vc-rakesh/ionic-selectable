@@ -21,6 +21,7 @@
     "ionic 2",
     "ionic 3",
     "ionic 4",
+    "ionic 7",
     "ion-select",
     "search",
     "searchable",
@@ -32,7 +33,7 @@
   "module": "ionic-selectable.js",
   "types": "ionic-selectable.d.ts",
   "peerDependencies": {
-    "@ionic/angular": ">=5.0.0"
+    "@ionic/angular": ">=7.1.2"
   },
   "devDependencies": {
     "@angular-devkit/architect": "~0.1601.4",
