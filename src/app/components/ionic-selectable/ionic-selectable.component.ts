@@ -20,17 +20,20 @@ import { IonicSelectableSearchFailTemplateDirective } from './ionic-selectable-s
 import { IonicSelectableTitleTemplateDirective } from './ionic-selectable-title-template.directive';
 import { IonicSelectableValueTemplateDirective } from './ionic-selectable-value-template.directive';
 import { IonicSelectableIconTemplateDirective } from './ionic-selectable-icon-template.directive';
+import { NgIf, NgTemplateOutlet, NgFor, JsonPipe } from '@angular/common';
 
 @Component({
-  selector: 'ionic-selectable',
-  templateUrl: './ionic-selectable.component.html',
-  styleUrls: ['./ionic-selectable.component.scss'],
-  encapsulation: ViewEncapsulation.None,
-  providers: [{
-    provide: NG_VALUE_ACCESSOR,
-    useExisting: forwardRef(() => IonicSelectableComponent),
-    multi: true
-  }]
+    selector: 'ionic-selectable',
+    templateUrl: './ionic-selectable.component.html',
+    styleUrls: ['./ionic-selectable.component.scss'],
+    encapsulation: ViewEncapsulation.None,
+    providers: [{
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => IonicSelectableComponent),
+            multi: true
+        }],
+    standalone: true,
+    imports: [NgIf, NgTemplateOutlet, NgFor, JsonPipe]
 })
 export class IonicSelectableComponent implements ControlValueAccessor, OnInit, DoCheck {
   @HostBinding('class.ionic-selectable')
@@ -1400,7 +1403,7 @@ export class IonicSelectableComponent implements ControlValueAccessor, OnInit, D
       // so unsubscribe in both success and fail cases.
       self._addItemObservable = self.onItemsChange.asObservable().subscribe(() => {
         self._addItemObservable.unsubscribe();
-        resolve();
+        resolve(true);
       }, () => {
         self._addItemObservable.unsubscribe();
         reject();
@@ -1476,7 +1479,7 @@ export class IonicSelectableComponent implements ControlValueAccessor, OnInit, D
       // so unsubscribe in both success and fail cases.
       self._deleteItemObservable = self.onItemsChange.asObservable().subscribe(() => {
         self._deleteItemObservable.unsubscribe();
-        resolve();
+        resolve(true);
       }, () => {
         self._deleteItemObservable.unsubscribe();
         reject();
@@ -1678,7 +1681,7 @@ export class IonicSelectableComponent implements ControlValueAccessor, OnInit, D
       }
 
       self._modalComponent._content.scrollToTop().then(() => {
-        resolve();
+        resolve(true);
       });
     });
   }
@@ -1700,7 +1703,7 @@ export class IonicSelectableComponent implements ControlValueAccessor, OnInit, D
       }
 
       self._modalComponent._content.scrollToBottom().then(() => {
-        resolve();
+        resolve(true);
       });
     });
   }

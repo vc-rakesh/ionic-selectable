@@ -1,10 +1,14 @@
 import { AfterViewInit, Component, ElementRef, HostBinding, HostListener, ViewChild } from '@angular/core';
-import { IonContent, IonInfiniteScroll, IonSearchbar, NavParams } from '@ionic/angular';
+import { IonContent, IonInfiniteScroll, IonSearchbar, NavParams, IonicModule } from '@ionic/angular';
 import { IonicSelectableComponent } from './ionic-selectable.component';
+import { FormsModule } from '@angular/forms';
+import { NgIf, NgTemplateOutlet, NgFor, NgClass, NgStyle } from '@angular/common';
 
 @Component({
-  selector: 'ionic-selectable-modal',
-  templateUrl: './ionic-selectable-modal.component.html'
+    selector: 'ionic-selectable-modal',
+    templateUrl: './ionic-selectable-modal.component.html',
+    standalone: true,
+    imports: [IonicModule, NgIf, NgTemplateOutlet, FormsModule, NgFor, NgClass, NgStyle]
 })
 export class IonicSelectableModalComponent implements AfterViewInit {
   @ViewChild(IonContent)

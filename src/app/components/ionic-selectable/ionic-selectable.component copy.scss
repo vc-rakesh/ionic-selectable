@@ -4,7 +4,7 @@ $padding: 16px;
 $item-padding-end: 16px;
 $item-padding-end-ios: 8px;
 .item {
-  &.item-ionic-selectable {
+  .item-ionic-selectable {
     // Vertical alignment for label.
     .item-inner .input-wrapper {
       align-items: normal;
@@ -23,7 +23,7 @@ $item-padding-end-ios: 8px;
     display: flex;
     /*
       When there's no ion-label we need to keep
-      value and icon aligned to the right ourselves.
+      value and icon alligned to the right ourselves.
     */
     flex-wrap: wrap;
     flex-direction: row;
@@ -66,7 +66,7 @@ $item-padding-end-ios: 8px;
       margin-left: 5px;
     }
   }
-  &.ionic-selectable-ios {
+  .ionic-selectable-ios {
     .ionic-selectable-value {
       padding-top: 11px;
       padding-bottom: 11px;
@@ -115,13 +115,13 @@ $item-padding-end-ios: 8px;
     appearance: none;
     outline: 0;
   }
-  .ionic-selectable-cover-add-item-template {
+  .ionic-selectable-add-item-template {
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
     background-color: #ffffff;
-    .ionic-selectable-cover-add-item-template-inner {
+    .ionic-selectable-add-item-template-inner {
       overflow-y: auto;
       > ion-footer {
         bottom: 0;
@@ -129,18 +129,18 @@ $item-padding-end-ios: 8px;
       }
     }
   }
-  &:not(&.ionic-selectable-has-label) {
+  :not(.ionic-selectable-has-label) {
     /*Occupy 100% of width when there's no label.*/
     max-width: 100%;
     width: 100%;
     .ionic-selectable-value {
-      .ionic-selectable-value-item {
+      .ionic-selectable-item {
         text-align: right;
       }
     }
   }
-  &.ionic-selectable-label-stacked,
-  &.ionic-selectable-label-floating {
+  .ionic-selectable-label-stacked,
+  .ionic-selectable-label-floating {
     align-self: stretch;
     max-width: 100%;
     padding-left: 0;
@@ -154,7 +154,7 @@ $item-padding-end-ios: 8px;
     .ionic-selectable-icon-inner {
       top: 7px;
     }
-    &.ionic-selectable-ios {
+    .ionic-selectable-ios {
       .ionic-selectable-value {
         padding-top: 0;
         padding-bottom: 0;
@@ -165,13 +165,13 @@ $item-padding-end-ios: 8px;
       }
     }
   }
-  &.ionic-selectable-label-default,
-  &.ionic-selectable-label-fixed {
+  .ionic-selectable-label-default,
+  .ionic-selectable-label-fixed {
     .ionic-selectable-value {
       padding-left: var(--padding-start, $padding);
     }
   }
-  &.ionic-selectable-label-fixed:not(&.ionic-selectable-has-value) {
+  .ionic-selectable-label-fixed:not(.ionic-selectable-has-value) {
     .ionic-selectable-value {
       padding-left: calc(var(--padding-start, $padding) + 11px);
     }
@@ -188,7 +188,7 @@ $item-padding-end-ios: 8px;
     margin-left: 8px;
     margin-right: 8px;
   }
-  &.ionic-selectable-modal-ios {
+  .ionic-selectable-modal-ios {
     .ionic-selectable-message {
       padding: 8px;
     }
@@ -198,12 +198,12 @@ $item-padding-end-ios: 8px;
       }
     }
   }
-  &.ionic-selectable-modal-md {
+  .ionic-selectable-modal-md {
     .ionic-selectable-message {
       padding: 8px 12px;
     }
   }
-  &.ionic-selectable-modal-can-clear.ionic-selectable-modal-is-multiple {
+  .ionic-selectable-modal-can-clear.ionic-selectable-modal-is-multiple {
     .footer .col:first-child {
       padding-right: calc($padding / 2);
     }
@@ -211,12 +211,12 @@ $item-padding-end-ios: 8px;
       padding-left: calc($padding / 2);
     }
   }
-  &.ionic-selectable-modal-is-searching {
+  .ionic-selectable-modal-is-searching {
     .scroll-content {
       overflow-y: hidden;
     }
   }
-  &.ionic-selectable-modal-is-add-item-template-visible {
+  .ionic-selectable-modal-is-add-item-template-visible {
     // Hide scroll from list content.
     // Use immediate child selector as we don't want to apply the rule
     // to content inside add item template defined by user.
