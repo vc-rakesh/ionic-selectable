@@ -1,8 +1,7 @@
 // tslint:disable-next-line:max-line-length
 import { Component, ContentChild, DoCheck, ElementRef, EventEmitter, forwardRef, HostBinding, Input, IterableDiffer, IterableDiffers, OnInit, Optional, Output, Renderer2, TemplateRef, ViewEncapsulation } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { IonItem, ModalController, Platform } from '@ionic/angular';
-import { AnimationBuilder, ModalOptions } from '@ionic/core';
+import { AnimationBuilder, IonItem, ModalController, ModalOptions, Platform } from '@ionic/angular';
 import { Subscription } from 'rxjs';
 import { IonicSelectableAddItemTemplateDirective } from './ionic-selectable-add-item-template.directive';
 import { IonicSelectableCloseButtonTemplateDirective } from './ionic-selectable-close-button-template.directive';
